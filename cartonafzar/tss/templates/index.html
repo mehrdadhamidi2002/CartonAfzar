@@ -1,833 +1,922 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<!-- Page Loader -->
-<div class="page-loader"></div>
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
 
-<div class="main-wrap">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5JGK1V4F4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <!-- Fixed Navbar -->
-    <nav class="navbar navbar-sticky navbar-transparent">
-        <!-- Navbar Transparent Class: navbar-transparent -->
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand primary-logo" href="#"><img class="img-responsive"
-                        src="{% static 'images/logo-theme.png' %}" alt="Logo" /></a>
-                <a class="navbar-brand sticky-logo" href="#"><img class="img-responsive"
-                        src="{% static 'images/logo.png' %}" alt="Logo" /></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="#home">خانه</a></li>
-                    <li><a href="#about">درباره ما</a></li>
-                    <li><a href="#service">سرویس ها</a></li>
-                    <li><a href="#portfolio">نمونه کار ها</a></li>
-                    <!--<li><a href="#plans">قیمت ها</a></li> -->
-                    <!--<li><a href="#blog">وبلاگ</a></li>-->
-                    <li><a href="#contact">تماس با ما</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <!-- Theme Header Start -->
-    <header id="home" class="full-height bg-img" data-src="{% static 'images/bg/main-demo.jpg' %}">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <div class="section-title">
-                                <h1 class="section-title-divider animated zoomIn"> نرم افزار کارتن سازی <span
-                                        class="primary-color"> کارتن افزار </span>
-                                </h1>
-                                <p>
-                                    نرم افزار کارتن سازی "کارتن افزار"، کامل ترین و تخصصی ترین نرم افزار صنعت ورق و
-                                    کارتن سازی
-                                </p>
-                            </div>
-                            <a class="btn btn-default btn-xl" href="#about">اطلاعات بیشتر</a>
-                            <!-- THEME DEFAULT BUTTON -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Theme Header End -->
-    <!-- About Section -->
-    <section id="about" class="section-parallax section-typo-white" data-src="{% static 'images/bg/3.jpg' %}"
-        data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg primary-section-bg"></span>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <div class="section-title">
-                        <h2 class="section-title-divider">ما آنچه را که شما نیاز دارید در اختیار داریم!</h2>
-                        <!-- SECTION TITLE -->
-                        <p>
-                            شرکت سامانه راهکار جامع، با بیست سال فعالیت، صرفاً در زمینه نرم افزارهای بسته بندی و
-                            کارتن و ورق سازی، مفتخر است که کامل ترین
-                            و حرفه ای ترین نرم افزار این صنعت را، جهت دقت، سرعت، یکپارچگی و آسایش صاحبان این صنعت،
-                            فراهم نموده است. </p>
-                    </div>
-                    <a class="btn btn-default btn-xl btn-bg-white" href="#">شروع کنید!</a>
-                    <!-- THEME DEFAULT BUTTON WITH WHITE BACKGROUND -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Who we are -->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="col-inner">
-                        <div class="section-sub-title">
-                            <h3 class="under-line">ما که هستیم؟</h3>
-                        </div>
-                        <p>
-                            ما مجموعه ای از برنامه نویسان حرفه ای جامعه نرم افزاری ایران هستیم که سخت ترین موانع نرم
-                            افزاری را در تمامی حوزه ها
-                            از پیش پا برداشته و جهت هر موقعیتی، راه حل های نرم افزاری فراوانی در دست داشته و در این
-                            راه به شرکت ها و سازمان های بسیاری
-                            خدمات نرم افزاری ارائه نموده ایم.</p>
-                    </div>
-                    <div class="col-inner">
-                        <div class="section-sub-title">
-                            <h3 class="under-line">آنچه ما انجام می دهیم</h3>
-                        </div>
-                        <ul class="star-list">
-                            <li>تحلیل و طراحی نرم افزار در کلیه زمینه ها </li>
-                            <li>پیاده سازی نرم افزار در بستر فریمورک های متنوع و به روز</li>
-                            <li>مشاوره و طراحی سازمانی در زمینه های مختلف فرآیندهای حرفه </li>
-                            <li>طراحی و پیاده سازی وب سایت های حرفه ای با قابلیت اتصال به داده های سازمانی </li>
-                            <lI>ایجاد ای پی آی های سازمانی با تکنولوژی روز دنیا </li>
-                        </ul>
-                    </div>
-                    <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
-                    <!-- THEME DEFAULT BUTTON WITH NORMAL STYLE -->
-                </div>
-                <div class="col-md-6 hidden-sm hidden-xs media">
-                    <img alt="" src="{% static 'images/about.png' %}" class="img-responsive" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Section End-->
-    <!-- Support Section Start -->
-    <section class="section-parallax" data-src="{% static 'images/bg/4.jpg' %}" data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg black-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <h2 class="inline-content"><span>برای شروع با کارتن افزار آماده اید؟</span></h2>
-                    <!-- SECTION TITLE -->
-                    <a class="btn btn-default btn-xl btn-inline" href="#">آماده شدن</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Support Section End -->
-    <!-- Service Section Start -->
-    <section class="padding-bottom-50" id="service">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2 class="section-title-divider primary-divider">خدمات ما</h2>
-                        <!-- SECTION TITLE -->
-                        <p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row service-box-wrap">
-                <div class="col-md-3 col-sm-6 service-box-col">
-                    <figure>
-                        <div class="service-image">
-                            <i class="flaticon-screen-1"></i>
-                        </div>
-                    </figure>
-                    <h4 class="service-title title-bordered">طراحی وب</h4>
-                    <p class="service-content"></p>
-                </div>
-                <div class="col-md-3 col-sm-6 service-box-col">
-                    <figure>
-                        <div class="service-image">
-                            <i class="flaticon-smartphone"></i>
-                        </div>
-                    </figure>
-                    <h4 class="service-title title-bordered">توسعه اپلیکیشن</h4>
-                </div>
-                <div class="col-md-3 col-sm-6 service-box-col">
-                    <figure>
-                        <div class="service-image">
-                            <i class="flaticon-snowflake"></i>
-                        </div>
-                    </figure>
-                    <h4 class="service-title title-bordered">نرم افزارهای سازمانی</h4>
-                    <p class="service-content"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Service Section End -->
-    <!-- Support Section Start -->
-    <section class="section-parallax" data-src="{% static 'images/bg/5.jpg' %}" data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg black-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <h2 class="inline-content"><span>ما آماده آمدن هستیم</span></h2>
-                    <!-- SECTION TITLE -->
-                    <a class="btn btn-default btn-xl btn-bg-white btn-inline" href="#">شروع کنید!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Support Section End -->
-    <!-- Features Section Start -->
-    <section class="padding-bottom-50" id="features">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2 class="section-title-divider primary-divider">ویژگی های ما</h2>
-                        <!-- SECTION TITLE -->
-                        <p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row margin-bottom-0">
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-cubes"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">طراحی UX</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-desktop"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">طراحی UI</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-bar-chart"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">کنترل کیفیت</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row margin-bottom-0">
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-fighter-jet"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">پشتیبانی سئو</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-server"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">نگهداری سرور</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="media feature-box">
-                        <div class="media-left">
-                            <span class="feature-icon">
-                                <i class="fa fa-code"></i>
-                            </span>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">توسعه کد</h4>
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Features Section End -->
-    <!-- Counter Section Start -->
-    <section class="section-parallax padding-bottom-50" data-src="{% static 'images/bg/3.jpg' %}"
-        data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg primary-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-wrap">
-                        <span class="counter-icon">
-                            <i class="flaticon-user"></i>
-                        </span>
-                        <h3 class="counter" data-counter="9894">
-                            9894
-                        </h3>
-                        <span class="counter-text">
-                            مشتریان خوشحال
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-wrap">
-                        <span class="counter-icon">
-                            <i class="flaticon-wallet"></i>
-                        </span>
-                        <h3 class="counter" data-counter="400">
-                            400
-                        </h3>
-                        <span class="counter-text">
-                            پروژه های تکمیل شده
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-wrap">
-                        <span class="counter-icon">
-                            <i class="flaticon-trophy"></i>
-                        </span>
-                        <h3 class="counter" data-counter="73">
-                            73
-                        </h3>
-                        <span class="counter-text">
-                            برنده جوایز
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="counter-wrap">
-                        <span class="counter-icon">
-                            <i class="flaticon-star"></i>
-                        </span>
-                        <h3 class="counter" data-counter="580">
-                            580
-                        </h3>
-                        <span class="counter-text">
-                            نقد های کاربران
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Counter Section End -->
-    <!-- Our Works Section Start -->
-    <section id="portfolio">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2 class="section-title-divider primary-divider">آثار ما را ببینید</h2>
-                        <!-- SECTION TITLE -->
-                        <p>
+        gtag('config', 'G-K5JGK1V4F4');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "کارتن افزار",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "100"
+      }
+    }
+    </script>
+    <!-- TITLE-->
+    <title>نرم افزار کارتن سازی کارتن افزار</title>
+    <!-- FAV ICON -->
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="portfolio-button-set margin-bottom-30">
-                        <a class="btn btn-default btn-xl btn-normal portfolio filter-active" href="#">همه</a>
-                        <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".digital"
-                            href="#">دیجیتال</a>
-                        <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".creative" href="#">خلاق</a>
-                        <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".web-design" href="#">طراحی
-                            وب</a>
-                        <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".mobile-app"
-                            href="#">اپلیکیشن</a>
-                    </div>
-                    <div class="grid" data-gutter="20" data-col="3">
-                        <div class="portfolio-item element-item digital web-design">
-                            <img alt="" src="{% static 'images/portfolio/1.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">برنامه ریزی تولید</a></h4>
-                                        <p class="portfolio-description"> سیستم برنامه ریزی و کنترل تولید ورق و
-                                            کارتن سازی ها </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/1.jpg' %}" data-lightbox="portfolio"
-                                                data-title="Landing Page"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item creative web-design">
-                            <img alt="" src="{% static 'images/portfolio/8.gif' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">بازرگانی فروش</a></h4>
-                                        <p class="portfolio-description"> سیستم مدیریت بازرگانی فروش صنایع ورق و
-                                            کارتن سازی </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/8.gif' %}" data-lightbox="portfolio"
-                                                data-title="Awesome Design"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item digital creative mobile-app">
-                            <img alt="" src="{% static 'images/portfolio/3.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">کد نویسی تمیز</a></h4>
-                                        <p class="portfolio-description"> به زودی ... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/3.jpg' %}" data-lightbox="portfolio"
-                                                data-title="Code Clear"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item digital mobile-app">
-                            <img alt="" src="{% static 'images/portfolio/10.gif' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">داشبورد کاربر</a></h4>
-                                        <p class="portfolio-description"> به زودی ... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/10.gif' %}" data-lightbox="portfolio"
-                                                data-title="User Dashboard"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item creative web-design">
-                            <img alt="" src="{% static 'images/portfolio/5.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">وکتور</a></h4>
-                                        <p class="portfolio-description">به زودی ...</p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/5.jpg' %}" data-lightbox="portfolio"
-                                                data-title="Vector Mask"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item digital creative">
-                            <img alt="" src="{% static 'images/portfolio/9.gif' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">ترافیک را بشکنید</a></h4>
-                                        <p class="portfolio-description"> به زودی... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/9.gif' %}" data-lightbox="portfolio"
-                                                data-title="Break Traffic"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item web-design mobile-app">
-                            <img alt="" src="{% static 'images/portfolio/7.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">طراحی ماکت</a></h4>
-                                        <p class="portfolio-description"> به زودی... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/7.jpg' %}" data-lightbox="portfolio"
-                                                data-title="Mockup Design"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item creative mobile-app">
-                            <img alt="" src="{% static 'images/portfolio/4.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">سرپرستی تیم</a></h4>
-                                        <p class="portfolio-description"> به زودی... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/4.jpg" data-lightbox="portfolio"
-                                                data-title="Team Lead"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item element-item digital web-design">
-                            <img alt="" src="{% static 'images/portfolio/6.jpg' %}" class="img-responsive" />
-                            <div class="portfolio-content">
-                                <div class="portfolio-content-inner">
-                                    <div class="portfolio-inner">
-                                        <h4><a href="#" class="link-white">عکاسی</a></h4>
-                                        <p class="portfolio-description"> به زودی ... </p>
-                                        <p class="portfolio-popup"><a class="link-white"
-                                                href="{% static 'images/portfolio/6.jpg' %}" data-lightbox="portfolio"
-                                                data-title="Phototgraphy"><span class="fa fa-arrows-alt"></span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Our Works Section End -->
-    <!-- Support Section Start -->
-    <section class="section-parallax" data-src="{% static 'images/bg/2.jpg' %}" data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg black-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <h2 class="inline-content"><span>ما آماده آمدن هستیم</span></h2>
-                    <br />
-                    <br />
-                    <!-- SECTION TITLE -->
-                    <a class="btn btn-default btn-xl btn-bg-white btn-inline"
-                        href="https://drive.google.com/file/d/1IQugF0OSOfMfM9oyMAvVUq6kScK9044r/view">شروع کنید!</a>
-                    <br />
-                    <br />
-                    <a class="btn btn-default btn-xl btn-bg-white btn-inline"
-                        href="https://drive.google.com/file/d/1IQugF0OSOfMfM9oyMAvVUq6kScK9044r/view">سیستم های
-                        عمومی</a>
-                    <br />
-                    <br />
-                    <a class="btn btn-default btn-xl btn-bg-white btn-inline"
-                        href="https://drive.google.com/drive/u/0/folders/1zZEo9v3PvI6PY8TYtBPPxrXZ-1Z2Vnkk">
-                        معرفی سیستم برنامه ریزی تولید </a>
-                    <br />
-                    <br />
-                    <a class="btn btn-default btn-xl btn-bg-white btn-inline"
-                        href="https://drive.google.com/file/d/1MyUopYYINfKqhlXUZe-7NvQGlS8sOkkc/view"> معرفی سیستم
-                        بازرگانی فروش </a>
+    <link rel="shortcut icon" href="{% static 'images/logo-theme.png' %}" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="نرم افزار کارتن سازی کارتن افزار، نرم افزاری برتر جهت  صنعت کارتن و راه حلهای بستهبندی را ارائه میدهد. برای نیازهای بستهبندی خود، نرمافزار قابل اعتماد ما را انتخاب کنید.">
+    <meta name="author" content="Netcopy">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+    <!-- FONTAWESOME CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" />
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" type="text/css" />
+    <!-- LIGHTBOX CSS -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" type="text/css" />
+    <!-- YTPLAYER CSS -->
+    <link rel="stylesheet" href="{% static 'css/mb.YTPlayer.min.css' %}" type="text/css" />
+    <!-- FLATICON CSS -->
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css" />
+    <!-- BOOTSTRAP VALIDATOR CSS -->
+    <link rel="stylesheet" href="{% static 'css/validator.min.css' %}" type="text/css" />
+    <!-- THEME STYLE CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <!-- Latest IE rendering engine & Chrome Frame Meta Tags -->
+    <!--[if IE]>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+		<![endif]-->
 
 
+</head>
 
+
+<body data-spy="scroll" data-offset="62">
+    <!-- Page Loader -->
+    <div class="page-loader"></div>
+
+    <div class="main-wrap">
+
+        <!-- Fixed Navbar -->
+        <nav class="navbar navbar-sticky navbar-transparent">
+            <!-- Navbar Transparent Class: navbar-transparent -->
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand primary-logo" href="#"><img class="img-responsive"
+                            src="{% static 'images/logo-theme.png' %}" alt="Logo" /></a>
+                    <a class="navbar-brand sticky-logo" href="#"><img class="img-responsive"
+                            src="{% static 'images/logo.png' %}" alt="Logo" /></a>
                 </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="active"><a href="#home">خانه</a></li>
+                        <li><a href="#about">درباره ما</a></li>
+                        <li><a href="#service">سرویس ها</a></li>
+                        <li><a href="#tssmovies">دمو و آموزش نرم افزارها</a></li>
+                        <li><a href="#tsscustomers">مشتریان نمونه</a></l>
+                            <!--<li><a href="#blog">وبلاگ</a></li>-->
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-        </div>
-    </section>
-    <!-- Support Section End -->
-    <!-- Testimonial Section Start -->
-    <section class="section-parallax section-typo-white" data-src="{% static 'images/bg/1.jpg' %}"
-        data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg black-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row">
-                <div dir="ltr" class="col-sm-8 col-sm-offset-2 text-center">
-                    <div class="testimonial-wrapper">
-                        <div class="owl-carousel white-dots testimonial-slider" data-items="1" data-loop="true"
-                            data-slideby="1" data-margin="0" data-nav="false" data-dots="true" data-smart-speed="1000"
-                            data-left-arrow="fa fa-angle-left" data-right-arrow="fa fa-angle-right">
-                            <div class="testimonial-item">
-                                <div class="testimonial-title">
-                                    <div class="testimonial-image img-thumbnail">
-                                        <!--    <img alt="" src="{% static 'images/testimonial/1.jpg' %}" class="img-responsive" title="Testimonial" /> -->
-                                    </div>
-                                    <h4> مشتریان نمونه</h4>
-                                    <span></span>
-                                </div>
-                                <div class="testimonial-content">
+            <!-- /.container-fluid -->
+        </nav>
+        <!-- Theme Header Start -->
+        <header id="home" class="full-height bg-img" data-src="{% static 'images/bg/main-demo.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text-center">
+                        <div class="header-content">
+                            <div class="header-content-inner">
+                                <div class="section-title">
+                                    <h1 class="section-title-divider animated zoomIn"> نرم افزار کارتن سازی
+                                        <br />
+                                        <br />
+                                        <span class="primary-color"> کارتن افزار </span>
+                                        <br />
+                                        <br />
+                                    </h1>
                                     <p>
-                                        صنايع بسته بندي كاسپين كارتن -
-                                        شركت كارتن نگين قزوين -
-                                        شركت آئين كارتن -
-                                        شركت دلتا سلولز -
-                                        شرکت زرین نگار چهلستون -
-                                        كارتن غرب تبريز -
-                                        شركت پرساپك -
-                                        كارتن عقاب -
-                                        شركت سپهراد -
-                                        شركت نكو كارتن -
-                                        شرکت آرتین کالا -
-                                        شرکت کارتن سازی سیمرغ -
-                                        شركت ديبا كارتن -
-                                        شركت زرين نگار شايلين -
-                                        شركت كيهان ميهن </p>
+                                        نرم افزار کارتن سازی "کارتن افزار"، کامل ترین و تخصصی ترین نرم افزار صنعت ورق و
+                                        کارتن سازی
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-title">
-                                    <div class="testimonial-image img-thumbnail">
-                                        <img alt="" src="{% static 'images/testimonial/2.jpg' %}" class="img-responsive"
-                                            title="Testimonial" />
-                                    </div>
-                                    <h4>نام مشتری</h4>
-                                    <span>سمت مشتری</span>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                                        طراحان گرافیک است </p>
-                                </div>
+                                <a class="btn btn-default btn-xl" href="#about">اطلاعات بیشتر</a>
+                                <!-- THEME DEFAULT BUTTON -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Testimonial Section End -->
-    <!-- Blog Section Start -->
-    <section class="padding-bottom-50" id="blog">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2 class="section-title-divider primary-divider">آخرین مطالب</h2>
+        </header>
+        <!-- Theme Header End -->
+        <!-- About Section -->
+        <section id="about" class="section-parallax section-typo-white" data-src="{% static 'images/bg/3.jpg' %}"
+            data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg primary-section-bg"></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 text-center">
+                        <div class="section-title">
+                            <h2 class="section-title-divider">ما آنچه را که شما نیاز دارید در اختیار داریم!</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+                                شرکت سامانه راهکار جامع، با بیست سال فعالیت، صرفاً در زمینه نرم افزارهای بسته بندی و
+                                کارتن و ورق سازی، مفتخر است که کامل ترین
+                                و حرفه ای ترین نرم افزار این صنعت را، جهت دقت، سرعت، یکپارچگی و آسایش صاحبان این صنعت،
+                                فراهم نموده است. </p>
+                        </div>
+                        <a class="btn btn-default btn-xl btn-bg-white" href="#">شروع کنید!</a>
+                        <!-- THEME DEFAULT BUTTON WITH WHITE BACKGROUND -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Who we are -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col-inner">
+                            <div class="section-sub-title">
+                                <h3 class="under-line">ما که هستیم؟</h3>
+                            </div>
+                            <p>
+                                ما مجموعه ای از برنامه نویسان حرفه ای جامعه نرم افزاری ایران هستیم که سخت ترین موانع نرم
+                                افزاری را در تمامی حوزه ها
+                                از پیش پا برداشته و جهت هر موقعیتی، راه حل های نرم افزاری فراوانی در دست داشته و در این
+                                راه به شرکت ها و سازمان های بسیاری
+                                خدمات نرم افزاری ارائه نموده ایم.</p>
+                        </div>
+                        <div class="col-inner">
+                            <div class="section-sub-title">
+                                <h3 class="under-line">آنچه ما انجام می دهیم</h3>
+                            </div>
+                            <ul class="star-list">
+                                <li>تحلیل و طراحی نرم افزار در کلیه زمینه ها </li>
+                                <li>پیاده سازی نرم افزار در بستر فریمورک های متنوع و به روز</li>
+                                <li>مشاوره و طراحی سازمانی در زمینه های مختلف فرآیندهای حرفه </li>
+                                <li>طراحی و پیاده سازی وب سایت های حرفه ای با قابلیت اتصال به داده های سازمانی </li>
+                                <lI>ایجاد ای پی آی های سازمانی با تکنولوژی روز دنیا </li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
+                        <!-- THEME DEFAULT BUTTON WITH NORMAL STYLE -->
+                    </div>
+                    <div class="col-md-6 hidden-sm hidden-xs media">
+                        <img alt="" src="{% static 'images/about.png' %}" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section End-->
+        <!-- Support Section Start -->
+        <section class="section-parallax" data-src="{% static 'images/bg/4.jpg' %}" data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg black-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 text-center">
+                        <h2 class="inline-content"><span>برای شروع با کارتن افزار آماده اید؟</span></h2>
                         <!-- SECTION TITLE -->
-                        <p>
-                            به زودی ...
-                        </p>
+                        <a class="btn btn-default btn-xl btn-inline" href="#">آماده شدن</a>
                     </div>
                 </div>
             </div>
-            <div class="row margin-bottom-0">
-                <div class="col-md-4">
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <img alt="" src="{% static 'images/blog/blog-1.jpg' %}" title="Jack"
-                                class="img-responsive" />
-                        </div>
-                        <div class="blog-data">
-                            <div class="blog-meta">
-                                <ul class="list-inline">
-                                    <li><a href="#" title="Author" class="author">مدیر</a></li>
-                                    <li><a href="#" title="Date" class="date">30 مهر 1402</a></li>
-                                    <li><a href="#" title="Comments" class="comment">136</a></li>
-                                </ul>
-                            </div>
-                            <div class="blog-title">
-                                <h3><a href="#" title="Title Here"> سیستم بازرگانی فروش
-                                    </a></h3>
-                            </div>
-                            <div class="blog-content">
-                                در این قسمت، نرم افزار با دریافت ابعاد و مشخصات کارتن و ورق، با توجه به فرمول های
-                                تعیین شده جهت انواع تیپ کارتن،
-                                نسبت به محاسبه قیمت و طول و عرض شیت تولیدی اقدام می نماید.</div>
-                            <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
+        </section>
+        <!-- Support Section End -->
+        <!-- Service Section Start -->
+        <section class="padding-bottom-50" id="service">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2 class="section-title-divider primary-divider">خدمات ما</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <img alt="" src="{% static 'images/blog/blog-2.jpg' %}" title="Jack"
-                                class="img-responsive" />
-                        </div>
-                        <div class="blog-data">
-                            <div class="blog-meta">
-                                <ul class="list-inline">
-                                    <li><a href="#" title="Author" class="author">مدیر</a></li>
-                                    <li><a href="#" title="Date" class="date">29 مهر 1402</a></li>
-                                    <li><a href="#" title="Comments" class="comment">54</a></li>
-                                </ul>
+                <div class="row service-box-wrap">
+                    <div class="col-md-3 col-sm-6 service-box-col">
+                        <figure>
+                            <div class="service-image">
+                                <i class="flaticon-screen-1"></i>
                             </div>
-                            <div class="blog-title">
-                                <h3><a href="#" title="Title Here"> سیستم برنامه ریزی تولید
-                                    </a></h3>
-                            </div>
-                            <div class="blog-content">
-                                سیستم برنامه ریزی و کنترل تولید کارتن و ورق، با توجه به مشخصات قراردادها، آنها را بر
-                                روی دستگاه های مختلف برنامه ریزی نموده و نسبت
-                                به زمان دهی تولید و ثبت بازخوردهای آن اقدام می نماید.</div>
-                            <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
-                        </div>
+                        </figure>
+                        <h4 class="service-title title-bordered">طراحی وب</h4>
+                        <p class="service-content"></p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <img alt="" src="{% static 'images/blog/blog-3.jpg' %}" title="Jack"
-                                class="img-responsive" />
-                        </div>
-                        <div class="blog-data">
-                            <div class="blog-meta">
-                                <ul class="list-inline">
-                                    <li><a href="#" title="Author" class="author">مدیر</a></li>
-                                    <li><a href="#" title="Date" class="date">20 شهریور 1402</a></li>
-                                    <li><a href="#" title="Comments" class="comment">67</a></li>
-                                </ul>
+                    <div class="col-md-3 col-sm-6 service-box-col">
+                        <figure>
+                            <div class="service-image">
+                                <i class="flaticon-smartphone"></i>
                             </div>
-                            <div class="blog-title">
-                                <h3><a href="#" title="Title Here"> سیستم انبارداری
-                                    </a></h3>
+                        </figure>
+                        <h4 class="service-title title-bordered">توسعه اپلیکیشن</h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6 service-box-col">
+                        <figure>
+                            <div class="service-image">
+                                <i class="flaticon-snowflake"></i>
                             </div>
-                            <div class="blog-content">
-                                انبارداری در کارتن سازی ها، مختصات خاص خود را داراست که در این نرم افزار، کلیه مسائل
-                                مربوط به کنترل نحوه ورود و خروج
-                                کالاها بر اساس قرارداد، ثبت و کنترل می گردد.</div>
-                            <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
-                        </div>
+                        </figure>
+                        <h4 class="service-title title-bordered">نرم افزارهای سازمانی</h4>
+                        <p class="service-content"></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
-    <!-- Subsribe Section Start -->
-    <section class="section-parallax" data-src="{% static 'images/bg/7.jpg' %}" data-stellar-background-ratio="0.5">
-        <span class="overlay-section-bg black-section-bg"></span>
-        <div class="container section-typo-white">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 text-center">
-                    <div class="subscribe-form">
-                        <p id="subscribe-status-msg" class="hide"></p>
-                        <form id="subscribe-form" class="subscribe-form" action="#">
-                            <div class="input-group subscribe-box">
-                                <input type="text" class="form-control" name="mcemail" autocomplete="off" id="mcemail"
-                                    placeholder="ایمیل شما">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default white-border typo-gray subscribe-btn"
-                                        type="submit">عضویت</button>
+        </section>
+        <!-- Service Section End -->
+        <!-- Support Section Start -->
+        <section class="section-parallax" data-src="{% static 'images/bg/5.jpg' %}" data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg black-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 text-center">
+                        <h2 class="inline-content"><span>ما آماده آمدن هستیم</span></h2>
+                        <!-- SECTION TITLE -->
+                        <a class="btn btn-default btn-xl btn-bg-white btn-inline" href="#">شروع کنید!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Support Section End -->
+        <!-- Features Section Start -->
+        <section class="padding-bottom-50" id="features">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2 class="section-title-divider primary-divider">ویژگی های ما</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-bottom-0">
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-cubes"></i>
                                 </span>
                             </div>
-                            <!-- /input-group -->
+                            <div class="media-body">
+                                <h4 class="media-heading">طراحی UX</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-desktop"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">طراحی UI</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-bar-chart"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">کنترل کیفیت</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-bottom-0">
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-fighter-jet"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">پشتیبانی سئو</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-server"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">نگهداری سرور</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="media feature-box">
+                            <div class="media-left">
+                                <span class="feature-icon">
+                                    <i class="fa fa-code"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">توسعه کد</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Section End -->
+        <!-- Counter Section Start -->
+        <section class="section-parallax padding-bottom-50" data-src="{% static 'images/bg/3.jpg' %}"
+            data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg primary-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row text-center">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="counter-wrap">
+                            <span class="counter-icon">
+                                <i class="flaticon-user"></i>
+                            </span>
+                            <h3 class="counter" data-counter="9894">
+                                9894
+                            </h3>
+                            <span class="counter-text">
+                                مشتریان خوشحال
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="counter-wrap">
+                            <span class="counter-icon">
+                                <i class="flaticon-wallet"></i>
+                            </span>
+                            <h3 class="counter" data-counter="400">
+                                400
+                            </h3>
+                            <span class="counter-text">
+                                پروژه های تکمیل شده
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="counter-wrap">
+                            <span class="counter-icon">
+                                <i class="flaticon-trophy"></i>
+                            </span>
+                            <h3 class="counter" data-counter="73">
+                                73
+                            </h3>
+                            <span class="counter-text">
+                                برنده جوایز
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="counter-wrap">
+                            <span class="counter-icon">
+                                <i class="flaticon-star"></i>
+                            </span>
+                            <h3 class="counter" data-counter="580">
+                                580
+                            </h3>
+                            <span class="counter-text">
+                                نقد های کاربران
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Counter Section End -->
+        <!-- Our Works Section Start -->
+        <section id="portfolio">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2 class="section-title-divider primary-divider">آثار ما را ببینید</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portfolio-button-set margin-bottom-30">
+                            <a class="btn btn-default btn-xl btn-normal portfolio filter-active" href="#">همه</a>
+                            <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".digital"
+                                href="#">دیجیتال</a>
+                            <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".creative"
+                                href="#">خلاق</a>
+                            <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".web-design"
+                                href="#">طراحی
+                                وب</a>
+                            <a class="btn btn-default btn-xl btn-normal portfolio" data-filter=".mobile-app"
+                                href="#">اپلیکیشن</a>
+                        </div>
+                        <div class="grid" data-gutter="20" data-col="3">
+                            <div class="portfolio-item element-item digital web-design">
+                                <img alt="" src="{% static 'images/portfolio/1.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">برنامه ریزی تولید</a></h4>
+                                            <p class="portfolio-description"> سیستم برنامه ریزی و کنترل تولید ورق و
+                                                کارتن سازی ها </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/1.jpg' %}"
+                                                    data-lightbox="portfolio" data-title="Landing Page"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item creative web-design">
+                                <img alt="" src="{% static 'images/portfolio/8.gif' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">بازرگانی فروش</a></h4>
+                                            <p class="portfolio-description"> سیستم مدیریت بازرگانی فروش صنایع ورق و
+                                                کارتن سازی </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/8.gif' %}"
+                                                    data-lightbox="portfolio" data-title="Awesome Design"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item digital creative mobile-app">
+                                <img alt="" src="{% static 'images/portfolio/3.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">کد نویسی تمیز</a></h4>
+                                            <p class="portfolio-description"> به زودی ... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/3.jpg' %}"
+                                                    data-lightbox="portfolio" data-title="Code Clear"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item digital mobile-app">
+                                <img alt="" src="{% static 'images/portfolio/10.gif' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">داشبورد کاربر</a></h4>
+                                            <p class="portfolio-description"> به زودی ... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/10.gif' %}"
+                                                    data-lightbox="portfolio" data-title="User Dashboard"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item creative web-design">
+                                <img alt="" src="{% static 'images/portfolio/5.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">وکتور</a></h4>
+                                            <p class="portfolio-description">به زودی ...</p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/5.jpg' %}"
+                                                    data-lightbox="portfolio" data-title="Vector Mask"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item digital creative">
+                                <img alt="" src="{% static 'images/portfolio/9.gif' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">ترافیک را بشکنید</a></h4>
+                                            <p class="portfolio-description"> به زودی... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/9.gif' %}"
+                                                    data-lightbox="portfolio" data-title="Break Traffic"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item web-design mobile-app">
+                                <img alt="" src="{% static 'images/portfolio/7.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">طراحی ماکت</a></h4>
+                                            <p class="portfolio-description"> به زودی... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/7.jpg' %}"
+                                                    data-lightbox="portfolio" data-title="Mockup Design"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item creative mobile-app">
+                                <img alt="" src="{% static 'images/portfolio/4.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">سرپرستی تیم</a></h4>
+                                            <p class="portfolio-description"> به زودی... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/4.jpg" data-lightbox="portfolio"
+                                                    data-title="Team Lead"><span class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item element-item digital web-design">
+                                <img alt="" src="{% static 'images/portfolio/6.jpg' %}" class="img-responsive" />
+                                <div class="portfolio-content">
+                                    <div class="portfolio-content-inner">
+                                        <div class="portfolio-inner">
+                                            <h4><a href="#" class="link-white">عکاسی</a></h4>
+                                            <p class="portfolio-description"> به زودی ... </p>
+                                            <p class="portfolio-popup"><a class="link-white"
+                                                    href="{% static 'images/portfolio/6.jpg' %}"
+                                                    data-lightbox="portfolio" data-title="Phototgraphy"><span
+                                                        class="fa fa-arrows-alt"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Works Section End -->
+        <!-- Support Section Start -->
+        <section id="tssmovies" class="section-parallax" data-src="{% static 'images/bg/2.jpg' %}"
+            data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg black-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 text-center">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <h2 class="inline-content"><span>فیلم های دموی نرم افزار</span></h2>
+                        <br />
+                        <br />
+                        <!-- SECTION TITLE -->
+                        <a class="btn btn-default btn-xl btn-bg-white btn-inline"
+                            href="https://drive.google.com/file/d/1IQugF0OSOfMfM9oyMAvVUq6kScK9044r/view"
+                            target="_blank">اطلاعات عمومی نرم افزار</a>
+                        <br />
+                        <br />
+                        <a class="btn btn-default btn-xl btn-bg-white btn-inline"
+                            href="https://drive.google.com/file/d/1MyUopYYINfKqhlXUZe-7NvQGlS8sOkkc/view"
+                            target="_blank"> معرفی سیستم
+                            بازرگانی فروش </a>
+                        <br />
+                        <br />
+                        <a class="btn btn-default btn-xl btn-bg-white btn-inline"
+                            href="https://drive.google.com/file/d/16IhHR2vuAe3Zqnz8qiY1mR-V8WRBAWJe/view?usp=drive_link"
+                            target="_blank">
+                            معرفی سیستم برنامه ریزی تولید </a>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Support Section End -->
+        <!-- Testimonial Section Start -->
+        <section id="tsscustomers" class="section-parallax section-typo-white" data-src="{% static 'images/bg/1.jpg' %}"
+            data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg black-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row">
+                    <div dir="ltr" class="col-sm-8 col-sm-offset-2 text-center">
+                        <div class="testimonial-wrapper">
+                            <div class="owl-carousel white-dots testimonial-slider" data-items="1" data-loop="true"
+                                data-slideby="1" data-margin="0" data-nav="false" data-dots="true"
+                                data-smart-speed="1000" data-left-arrow="fa fa-angle-left"
+                                data-right-arrow="fa fa-angle-right">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-title">
+                                        <div class="testimonial-image img-thumbnail">
+                                            <!--    <img alt="" src="{% static 'images/testimonial/1.jpg' %}" class="img-responsive" title="Testimonial" /> -->
+                                        </div>
+                                        <h4> مشتریان نمونه</h4>
+                                        <span></span>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>
+                                            صنايع بسته بندي كاسپين كارتن <br>
+                                            شركت كارتن نگين قزوين <br>
+                                            شركت آئين كارتن <br>
+                                            شركت دلتا سلولز <br>
+                                            شرکت زرین نگار چهلستون <br>
+                                            كارتن غرب تبريز <br>
+                                            شركت پرساپك <br>
+                                            كارتن عقاب <br>
+                                            شركت سپهراد <br>
+                                            شركت نكو كارتن <br>
+                                            شرکت دیبا کارتن <br>
+                                            شرکت آرتین کالا <br>
+                                            شرکت کارتن سازی سیمرغ <br>
+                                            شركت ديبا كارتن <br>
+                                            شرکت آلتون ورق صنعت <br>
+                                            شركت زرين نگار شايلين<br>
+                                            شركت كيهان ميهن <br>
+                                            و ...
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-item">
+                                    <div class="testimonial-title">
+                                        <div class="testimonial-image img-thumbnail">
+                                            <img alt="" src="{% static 'images/testimonial/2.jpg' %}"
+                                                class="img-responsive" title="Testimonial" />
+                                        </div>
+                                        <h4>نام مشتری</h4>
+                                        <span>سمت مشتری</span>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Section End -->
+        <!-- Blog Section Start -->
+        <section class="padding-bottom-50" id="blog">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2 class="section-title-divider primary-divider">آخرین مطالب</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+                                به زودی ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-bottom-0">
+                    <div class="col-md-4">
+                        <div class="blog-wrap">
+                            <div class="blog-image">
+                                <img alt="" src="{% static 'images/blog/blog-1.jpg' %}" title="Jack"
+                                    class="img-responsive" />
+                            </div>
+                            <div class="blog-data">
+                                <div class="blog-meta">
+                                    <ul class="list-inline">
+                                        <li><a href="#" title="Author" class="author">مدیر</a></li>
+                                        <li><a href="#" title="Date" class="date">30 مهر 1402</a></li>
+                                        <li><a href="#" title="Comments" class="comment">136</a></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-title">
+                                    <h3><a href="#" title="Title Here"> سیستم بازرگانی فروش
+                                        </a></h3>
+                                </div>
+                                <div class="blog-content">
+                                    در این قسمت، نرم افزار با دریافت ابعاد و مشخصات کارتن و ورق، با توجه به فرمول های
+                                    تعیین شده جهت انواع تیپ کارتن،
+                                    نسبت به محاسبه قیمت و طول و عرض شیت تولیدی اقدام می نماید.</div>
+                                <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-wrap">
+                            <div class="blog-image">
+                                <img alt="" src="{% static 'images/blog/blog-2.jpg' %}" title="Jack"
+                                    class="img-responsive" />
+                            </div>
+                            <div class="blog-data">
+                                <div class="blog-meta">
+                                    <ul class="list-inline">
+                                        <li><a href="#" title="Author" class="author">مدیر</a></li>
+                                        <li><a href="#" title="Date" class="date">29 مهر 1402</a></li>
+                                        <li><a href="#" title="Comments" class="comment">54</a></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-title">
+                                    <h3><a href="#" title="Title Here"> سیستم برنامه ریزی تولید
+                                        </a></h3>
+                                </div>
+                                <div class="blog-content">
+                                    سیستم برنامه ریزی و کنترل تولید کارتن و ورق، با توجه به مشخصات قراردادها، آنها را بر
+                                    روی دستگاه های مختلف برنامه ریزی نموده و نسبت
+                                    به زمان دهی تولید و ثبت بازخوردهای آن اقدام می نماید.</div>
+                                <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-wrap">
+                            <div class="blog-image">
+                                <img alt="" src="{% static 'images/blog/blog-3.jpg' %}" title="Jack"
+                                    class="img-responsive" />
+                            </div>
+                            <div class="blog-data">
+                                <div class="blog-meta">
+                                    <ul class="list-inline">
+                                        <li><a href="#" title="Author" class="author">مدیر</a></li>
+                                        <li><a href="#" title="Date" class="date">20 شهریور 1402</a></li>
+                                        <li><a href="#" title="Comments" class="comment">67</a></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-title">
+                                    <h3><a href="#" title="Title Here"> سیستم انبارداری
+                                        </a></h3>
+                                </div>
+                                <div class="blog-content">
+                                    انبارداری در کارتن سازی ها، مختصات خاص خود را داراست که در این نرم افزار، کلیه مسائل
+                                    مربوط به کنترل نحوه ورود و خروج
+                                    کالاها بر اساس قرارداد، ثبت و کنترل می گردد.</div>
+                                <a class="btn btn-default btn-xl btn-normal margin-top-20" href="#">بیشتر بخوانید</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Section End -->
+        <!-- Subsribe Section Start -->
+        <section class="section-parallax" data-src="{% static 'images/bg/7.jpg' %}" data-stellar-background-ratio="0.5">
+            <span class="overlay-section-bg black-section-bg"></span>
+            <div class="container section-typo-white">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 text-center">
+                        <div class="subscribe-form">
+                            <p id="subscribe-status-msg" class="hide"></p>
+                            <form id="subscribe-form" class="subscribe-form" action="#">
+                                <div class="input-group subscribe-box">
+                                    <input type="text" class="form-control" name="mcemail" autocomplete="off"
+                                        id="mcemail" placeholder="ایمیل شما">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default white-border typo-gray subscribe-btn"
+                                            type="submit">عضویت</button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Subsribe Section End -->
+        <!-- Contact Section Start -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="section-title">
+                            <h2 class="section-title-divider primary-divider">تماس با ما</h2>
+                            <!-- SECTION TITLE -->
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="contact-adress">
+                            <p class="contact-icons"><i class="fa fa-map-marker primary-color"></i></p>
+                            <div class="padding-tb-20">
+                                <p>
+                                    تهران
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="contact-mail">
+                            <p class="contact-icons"><i class="fa fa-envelope-o primary-color"></i></p>
+                            <div class="padding-tb-20">
+                                <p>info@cartonafzar.ir</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="contact-number">
+                            <p class="contact-icons"><i class="fa fa-phone primary-color"></i></p>
+                            <div class="padding-tb-20">
+                                <p>
+                                    00989122140694
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="contact-form">
+                        <p id="contact-status-msg" class="hide"></p>
+                        <form id="contact-form" class="contact-form" action="inc/function.php">
+                            <div class="col-md-4 col-md-offset-2 padding-bottom-20">
+                                <div class="form-group">
+                                    <input id="name" class="form-control" name="name" autocomplete="off"
+                                        placeholder="نام" data-bv-field="name" type="text" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 padding-bottom-20">
+                                <div class="form-group">
+                                    <input id="email" class="form-control" name="email" autocomplete="off"
+                                        placeholder="ایمیل" data-bv-field="email" type="email">
+                                </div>
+                            </div>
+                            <span class="clearfix"></span>
+                            <div class="contact-message col-md-8 col-md-offset-2">
+                                <div class="form-group margin-bottom-0">
+                                    <textarea id="message" class="form-control textarea" rows="3" name="message"
+                                        placeholder="پیام" data-bv-field="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 padding-top-30">
+                                <button type="submit"
+                                    class="btn btn-default btn-xl btn-normal margin-top-20 contact-btn">ارسال
+                                    پیام</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Subsribe Section End -->
-    <!-- Contact Section Start -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <div class="section-title">
-                        <h2 class="section-title-divider primary-divider">تماس با ما</h2>
-                        <!-- SECTION TITLE -->
-                        <p>
+        </section>
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div class="contact-adress">
-                        <p class="contact-icons"><i class="fa fa-map-marker primary-color"></i></p>
-                        <div class="padding-tb-20">
-                            <p>
-                                تهران
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="contact-mail">
-                        <p class="contact-icons"><i class="fa fa-envelope-o primary-color"></i></p>
-                        <div class="padding-tb-20">
-                            <p>info@cartonafzar.ir</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="contact-number">
-                        <p class="contact-icons"><i class="fa fa-phone primary-color"></i></p>
-                        <div class="padding-tb-20">
-                            <p>
-                                00989122140694
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="contact-form">
-                    <p id="contact-status-msg" class="hide"></p>
-                    <form id="contact-form" class="contact-form" action="inc/function.php">
-                        <div class="col-md-4 col-md-offset-2 padding-bottom-20">
-                            <div class="form-group">
-                                <input id="name" class="form-control" name="name" autocomplete="off" placeholder="نام"
-                                    data-bv-field="name" type="text" />
-                            </div>
-                        </div>
-                        <div class="col-md-4 padding-bottom-20">
-                            <div class="form-group">
-                                <input id="email" class="form-control" name="email" autocomplete="off"
-                                    placeholder="ایمیل" data-bv-field="email" type="email">
-                            </div>
-                        </div>
-                        <span class="clearfix"></span>
-                        <div class="contact-message col-md-8 col-md-offset-2">
-                            <div class="form-group margin-bottom-0">
-                                <textarea id="message" class="form-control textarea" rows="3" name="message"
-                                    placeholder="پیام" data-bv-field="message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12 padding-top-30">
-                            <button type="submit"
-                                class="btn btn-default btn-xl btn-normal margin-top-20 contact-btn">ارسال
-                                پیام</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section End -->
-    <!-- Map Section Start -->
-    <!--  <section class="padding-none"> -->
-    <!-- Map Styles -> Standard, Aubergine, Silver, Retro, Dark, Aubergine -->
-    <!--  <div id="starkGoogleMap" style="width:100%;height:400px;" data-map-style="Silver"></div> -->
-    <!--  </section> -->
-    <!-- Map Section End -->
+        <!-- Contact Section End -->
+        <!-- Map Section Start -->
+        <section class="padding-none">
+            Map Styles -> Standard, Aubergine, Silver, Retro, Dark, Aubergine
+            <div id="starkGoogleMap" style="width:100%;height:400px;" data-map-style="Silver"></div>
+        </section>
+        <!-- Map Section End -->
 
-    <!-- Our Clients Section Start
+        <!-- Our Clients Section Start
         <section class="padding-tb-40">
             <div class="container">
                 <div class="row">
@@ -870,31 +959,63 @@
                 </div>
             </div>
         </section> -->
-    <!-- Our Clients Section End -->
-    <!-- Footer Start -->
-    <footer class="footer padding-tb-30 primary-section-bg section-typo-white">
-        <div class="container">
-            <div class="row text-center margin-bottom-20">
-                <div class="col-md-12">
-                    <ul class="nav navbar-nav footer-social">
-                        <li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="social-pinterest"><i class="fa fa-pinterest-p"></i></a></li>
-                        <li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
+        <!-- Our Clients Section End -->
+        <!-- Footer Start -->
+        <footer class="footer padding-tb-30 primary-section-bg section-typo-white">
+            <div class="container">
+                <div class="row text-center margin-bottom-20">
+                    <div class="col-md-12">
+                        <ul class="nav navbar-nav footer-social">
+                            <li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                            <li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <p class="copyright-text"> <a href="#"></a></p>
+                    </div>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <p class="copyright-text"> <a href="#"></a></p>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
-    </footer>
-    <!-- Footer End -->
+            <a href="#" class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+        </footer>
+        <!-- Footer End -->
 
-</div><!-- .main-wrap -->
+    </div><!-- .main-wrap -->
 
-{% endblock %}
+    <!-- JQUERY LIBRARY -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- OWL CAROUSEL JS -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- APPEARS JS -->
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <!-- EASING JS -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- STELLAR JS -->
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <!-- COUNTER JS -->
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <!-- ISOTOPE JS -->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!-- LIGHTBOX JS -->
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <!-- YTPLAYER JS -->
+    <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+    <!-- BOOTSTRAP VALIDATOR JS -->
+    <script src="{% static 'js/validator.min.js' %}"></script>
+    <!-- THEME JS -->
+    <script src="{% static 'js/theme.js' %}"></script>
+    <!-- GOOGLE MAP INIT JS -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtkY02zM_XV3XtSzJbNwJdiA2iuNmP_bI&callback=initStarkContact"
+        type="text/javascript"></script>
+    <!-- // BEGIN // Fera.ai Footer Code - DO NOT MODIFY // -->
+
+</body>
+
+</html>
