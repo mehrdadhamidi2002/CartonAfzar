@@ -13,9 +13,9 @@ SECRET_KEY = 'django-insecure-1&#ulu520(p$=nd(k)@7^94=vkrx3gu7#fp=q)%bc$cb5gol_k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'menus',
     'treebeard',
     'tss',
+    'django_htmx',
 ]
 
 SITE_ID = 1
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 ROOT_URLCONF = 'cartonafzar.urls'

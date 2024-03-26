@@ -10,3 +10,7 @@ def home(request):
     
 
     return render(request, 'index.html', context)
+
+def subscribe(request):
+    #return HttpResponse('<div style="color:blue">Subscribed</div>')
+    return render(request,'partial.html', {})
