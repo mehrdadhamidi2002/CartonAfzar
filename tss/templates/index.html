@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
+{% block title %} Welcome To CartonAfzar {% endblock %}
+
+{% block content %}
+
 <body data-spy="scroll" data-offset="62">
-    {% block content %}
     <!-- Page Loader -->
     <div class="page-loader"></div>
 
@@ -19,7 +23,7 @@
                             <div class="header-content-inner">
                                 <div class="secton-title">
                                     <h1 class="primary-color"> کارتن افزار
-                                            <br />
+                                        <br />
                                         <span style="font-size: 1cap;" class="primary-color"> نرم افزار تخصصی کارتن
                                             و
                                             ورق </span>
@@ -837,8 +841,8 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="contact-number">
-                            <p class="contact-icons"><a href="tel:+989122140694"><i
-                                        class="fa fa-phone primary-color"></i></p>
+                            <!--href="tel:+989122140694"-->
+                            <p class="contact-icons"><a><i class="fa fa-phone primary-color"></i></p>
                             <div class="padding-tb-20">
                                 <p>
                                     00989122140694
@@ -850,7 +854,8 @@
                 <div class="row text-center">
                     <div class="contact-form">
                         <p id="contact-status-msg" class="hide"></p>
-                        <form id="contact-form" class="contact-form" action="inc/function.php">
+                        <form id="contact-form" class="contact-form" hx-post="contact/" hx-target="#contact-form">
+                            {% csrf_token %}
                             <div class="col-md-4 col-md-offset-2 padding-bottom-20">
                                 <div class="form-group">
                                     <input id="name" class="form-control" name="name" autocomplete="off"
@@ -991,7 +996,5 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtkY02zM_XV3XtSzJbNwJdiA2iuNmP_bI&callback=initStarkContact"
         type="text/javascript"></script>
     <!-- // BEGIN // Fera.ai Footer Code - DO NOT MODIFY // -->
-    {% endblock %}
 </body>
-
-</html>
+{% endblock %}
