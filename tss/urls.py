@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import home, subscribe,create_contact
 urlpatterns = [
     path('', home, name='home'),

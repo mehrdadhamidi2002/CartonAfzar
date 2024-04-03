@@ -1,10 +1,10 @@
 {% load static %}
 <!-- Fixed Navbar -->
+
 <nav class="navbar navbar-sticky navbar-transparent">
-    <!-- Navbar Transparent Class: navbar-transparent -->
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                 data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="icon-bar"></span>
@@ -16,24 +16,26 @@
             <a class="navbar-brand sticky-logo" href="#"><img class="img-responsive"
                     src="{% static 'images/logo.png' %}" alt="Logo" /></a>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="#home">خانه</a></li>
+                <li class="active"><a href="/">خانه</a></li>
                 <li><a href="#about">درباره ما</a></li>
                 <li><a href="#service">سرویس ها</a></li>
                 <li><a href="#tssmovies">دمو و آموزش نرم افزارها</a></li>
-                <li><a href="#tsscustomers">مشتریان نمونه</a></l>
-                    <!--<li><a href="#blog">وبلاگ</a></li>-->
+                <li><a href="#tsscustomers">مشتریان نمونه</a></li>
                 <li><a href="#contact">تماس با ما</a></li>
                 <li><a href="https://wa.me/+989122140694" target="_blank" class="social-whatsapp"><i
                             class="fa fa-whatsapp fa-1x primary-color"></i></a></li>
                 <li><a href="https://www.instagram.com/cartonafzar/" target="_blank" class="social-instagram"><i
                             class="fa fa-instagram fa-1x primary-color"></i></a></li>
-                <li><a href="tel:+989122140694"><i class="fa fa-phone fa-1x primary-color"></i></li>
+
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'account:logout_user' %}">خروج</a></li>
+                {% else %}
+                <li><a href="{% url 'account:login_user' %}">ورود</a></li>
+                <li><a href="{% url 'account:signup' %}">ثبت نام</a></li>
+                {% endif %}
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
 </nav>

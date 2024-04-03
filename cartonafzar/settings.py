@@ -42,14 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_check_seo',
+    'account',
     'cms',
     'menus',
     'treebeard',
     'tss',
-    'account',
     'django_htmx',
 ]
-#AUTH_USER_MODEL = 'account.User'
+
+
+
 
 SITE_ID = 1
 
@@ -68,11 +70,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'cartonafzar.urls'
 
 #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'tss', 'templates', 'tss')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,6 +85,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'cartonafzar.wsgi.application'
 
@@ -129,8 +131,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-print(BASE_DIR)
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -151,3 +151,7 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend']
+
+#AUTH_USER_MODEL = 'account.User'

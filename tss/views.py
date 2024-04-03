@@ -3,14 +3,17 @@ from django.http import HttpResponse
 from .forms import ContactForm  # Import your ContactForm
 
 def home(request):
+    if request.method == 'POST':
+        print(request.user)
+        user = request.user
+        context = {'user': user}
+    if request.method == 'GET':
+        context = {'user': None}
 
-    context = {
-        'title': 'My Website',
-        'greeting': 'Hello!',
-    }
     
-
-    return render(request, 'index.html', context)
+    
+    print(request.method)
+    return render(request, 'tss/index.html', context)
 
 def subscribe(request):
     #return HttpResponse('<div style="color:blue">Subscribed</div>')

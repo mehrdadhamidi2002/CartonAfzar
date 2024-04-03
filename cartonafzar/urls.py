@@ -10,6 +10,8 @@ def trigger_error(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tss.urls'), name='home'),
+    path('account/', include('account.urls')),
+    path('account/', include('django.contrib.auth.urls')),
     path('django-check-seo/', include('django_check_seo.urls')),
     path('sentry-debug/', trigger_error),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
