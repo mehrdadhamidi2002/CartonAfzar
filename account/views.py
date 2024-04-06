@@ -15,7 +15,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request,("you were successfully logged in"))
-            return render(request, 'tss/index.html')
+            return render(request,'tss/index.html',{'user':user})
         else:
             messages.success(request,("Password or Username is incorrect"))
             return redirect('account:login_user')
@@ -42,7 +42,7 @@ def signup(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request,("you have successfully created a new account"))
-            return render(request, 'tss/index.html')
+            return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'account/signup.html',{'form': form})

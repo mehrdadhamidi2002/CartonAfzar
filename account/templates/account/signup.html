@@ -7,58 +7,82 @@
 {% block content %}
 
 
+
 <div class="page-loader"></div>
-<header id="home" class="full-height bg-img" data-src="{% static 'images/bg/main-demo.jpg' %}">
+<header id="home" class="full-height bg-img" data-src="{% static 'images/bg/cartonbackground.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <div class="header-content">
                     <div class="header-content-inner">
                         <div class="secton-title">
-                            <main class="py-6 px-8">
-                                <div class="container py-15 bg-slate-800 text-center"
-                                    style="background-color: #09B9BB; border-radius: 50px;">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <h1 class="display-4 text-white">ثبت نام</h1>
-                                    <br>
-                                    <form class="mt-4 px-4" method="post" action=".">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <label for="username" class="text-white">نام</label>
-                                            <input name="username" type="text" class="form-control" id="username">
-                                        </div>
+                            <main class="py-8 px-10 ">
 
-                                        <div class="form-group">
-                                            <label for="email" class="text-white">ایمیل</label>
-                                            <input name="email" type="email" class="form-control" id="email">
-                                        </div>
+                                <body class="login-page">
+                                    <main>
+                                        <div class="login-block">
+                                            <div style="text-align: center;">
+                                                <img class="img-responsive"
+                                                    style="display: block; margin-left: auto; margin-right: auto;"
+                                                    src="{% static 'images/logo-theme.png' %}" alt="Logo">
+                                            </div>
+                                            <h1 class="primary-color">فرم ثبت نام کاربران</h1>
+                                            <form method="post" action="." autocomplete="new-password">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-user ti-user"></i></span>
+                                                        <input name="username" type="text" class="form-control"
+                                                            autocomplete="new-password" placeholder="نام کاربری">
+                                                    </div>
+                                                </div>
+                                                <!--<hr class="hr-xs">-->
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-lock ti-unlock"></i></span>
+                                                        <input name="password1" type="password" class="form-control"
+                                                            placeholder="رمز عبور">
+                                                    </div>
+                                                </div>
 
-                                        <div class="form-group">
-                                            <label for="password" class="text-white">رمز عبور</label>
-                                            <input name="password1" type="password" class="form-control" id="password">
-                                        </div>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-lock ti-unlock"></i></span>
+                                                        <input name="password2" type="password" class="form-control"
+                                                            placeholder="تکرار رمز عبور">
+                                                    </div>
+                                                </div>
 
-                                        <div class="form-group">
-                                            <label for="repeat-password" class="text-white">تکرار پسورد</label>
-                                            <input name="password2" type="password" class="form-control"
-                                                id="repeat-password">
-                                        </div>
+                                                <button class="btn btn-primary btn-block" type="submit">ثبت
+                                                    نام</button>
 
-                                        <button class="btn btn-default typo-gray subscribe-btn ">ثبت نام</button>
-                                        <br>
-                                    </form>
-                                    <br>
-                                </div>
+                                                <div class="login-footer">
+                                                    <h5>ثبت نام با شبکه های اجتماعی</h5>
+                                                    <ul class="social-icons padding-none">
+                                                        <li><a class="facebook" href="#"><i
+                                                                    class="fa fa-facebook"></i></a></li>
+                                                        <li><a class="twitter" href="#"><i
+                                                                    class="fa fa-twitter"></i></a></li>
+                                                        <li><a class="linkedin" href="#"><i
+                                                                    class="fa fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                            <div class="login-links">
+                                                <a class="txt-brand login-links" href="{% url 'account:login_user' %}"">حساب کاربری دارید؟ وارد شوید</a>
+                                            </div>
+                                        </div>
+                                    </main>
+                                </body>
                             </main>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </header>
-
 
 {% endblock %}
