@@ -10,6 +10,7 @@
     content="cartonafzar, کارتن افزار, نرم افزار کارتن سازی, tss, تی اس اس, samaneh rahkar jame, سامانه راهکار جامع, Corrugating board software">
   <meta name="description" content="نرم افزار کارتن سازی کاتن افزار حرفه ای ترین نرم افزار کارتن و ورق">
   <meta name="author" content="Netcopy">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5JGK1V4F4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -69,8 +70,6 @@
 
 <body data-spy="scroll" data-offset="62">
 
-  <!-- Fixed Navbar -->
-
   <nav class="navbar navbar-sticky navbar-transparent">
     <div class="container">
       <div class="navbar-header">
@@ -81,51 +80,46 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand primary-logo" href="#"><img class="img-responsive"
+        <a class="navbar-brand primary-logo" href="/"><img class="img-responsive"
             src="{% static 'images/logo-theme.png' %}" alt="Logo" /></a>
-        <a class="navbar-brand sticky-logo" href="#"><img class="img-responsive" src="{% static 'images/logo.png' %}"
+        <a class="navbar-brand sticky-logo" href="/"><img class="img-responsive" src="{% static 'images/logo.png' %}"
             alt="Logo" /></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
-          <li class="active"><a href="/">خانه</a></li>
+          <li><a href="/">خانه</a></li>
           <li><a href="#about">درباره ما</a></li>
           <li><a href="#service">سرویس ها</a></li>
           <li><a href="#tssmovies">دمو و آموزش نرم افزارها</a></li>
           <li><a href="#tsscustomers">مشتریان نمونه</a></li>
           <li><a href="#contact">تماس با ما</a></li>
           <li><a href="https://wa.me/+989122140694" target="_blank" class="social-whatsapp"><i
-                class="fa fa-whatsapp fa-1x primary-color"></i></a></li>
+                class="fa fa-whatsapp fa-1x "></i></a></li>
           <li><a href="https://www.instagram.com/cartonafzar/" target="_blank" class="social-instagram"><i
-                class="fa fa-instagram fa-1x primary-color"></i></a></li>
+                class="fa fa-instagram fa-1x "></i></a></li>
 
           {% if user.is_authenticated %}
-          <li><a href="{% url 'account:logout_user' %}">خروج</a></li>
+          <li><a class="nav-link active" href="{% url 'account:logout_user' %}">خروج</a></li>
           {% else %}
-          <li><a href="{% url 'account:login_user' %}">ورود</a></li>
-          <li><a href="{% url 'account:signup' %}">ثبت نام</a></li>
+          <li><a class="nav-link active" aria-current="page" href="{% url 'account:login_user' %}">ورود</a></li>
+          <li><a class="nav-link active " href="{% url 'account:signup' %}">ثبت نام</a></li>
           {% endif %}
-        </ul>
+
+          {% if user.is_superuser %}
+          <li><a class="nav-link active " href="{% url 'tss:sitemessages_grid_view' %}">مدیریت پیام ها</a></li>
+
+
+          {% endif %}
       </div>
     </div>
   </nav>
-  <div class="page-loader"></div>
+  <div class=" page-loader">
+  </div>
 
   <div class="main-wrap">
 
-
-
     {% block content %}
-    <div>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {% if messages %}
-        {% for message in messages %}
-        {{ message }}
-        {% endfor %}
-        {% endif %}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    </div>
+
 
     {% endblock %}
 
@@ -139,8 +133,10 @@
                     class="fa fa-whatsapp fa-3x text-success"></i></a></li>
               <li><a href="https://www.instagram.com/cartonafzar/" target="_blank" class="social-instagram"><i
                     class="fa fa-instagram fa-3x text-success"></i></a></li>
-              <li><a href="tel:+989122140694"><i class="fa fa-phone fa-1x primary-color"></i></li>
+              <li><a href="tel:+989122140694"><i class="fa fa-phone fa-3x text-success"></i></a></li>
 
+            </ul>
+            </li>
             </ul>
           </div>
         </div>
@@ -155,6 +151,11 @@
     <!-- Footer End -->
 
 
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+    </script>
 
     <!-- JQUERY LIBRARY -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -185,6 +186,9 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtkY02zM_XV3XtSzJbNwJdiA2iuNmP_bI&callback=initStarkContact"
       type="text/javascript"></script>
     <!-- // BEGIN // Fera.ai Footer Code - DO NOT MODIFY // -->
+
+
+  </div>
 </body>
 
 </html>

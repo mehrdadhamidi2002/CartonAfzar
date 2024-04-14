@@ -192,7 +192,10 @@ section {
 .primary-color{
 	color:#09b9bb;
 }
+
+
 /* 04. Navbar Styles */
+
 .navbar {
 	margin-bottom:0;
 	-webkit-border-radius: 0;
@@ -483,6 +486,9 @@ header {
 	display:inline-block;	
 	width:auto;
 }
+
+
+
 /* Header/Sliding Part Styles */
 .header-content .header-content-inner {
 	color: #ffffff;

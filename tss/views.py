@@ -1,6 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm  # Import your ContactForm
+from .models import Contact
+from django.views.decorators.http import require_GET
+from django.shortcuts import get_object_or_404
+from django.template.loader import get_template
+from django.http import HttpResponse
+from weasyprint import HTML
+from .models import Contact
+from django.template.loader import render_to_string
+import tempfile
+from django.db.models import Count
 
 def home(request):
     if request.method == 'POST':
@@ -31,3 +41,42 @@ def create_contact(request):
     #return render(request, 'contact_form.html', {'form': form})
     return HttpResponse('ok')
 
+def sitemessages_grid_view(request):
+    print(request)
+    print(request.POST)
+    print(request.GET)
+    site_messages = Contact.objects.all()
+    return render(request, 'sitemessages.html', {'sitemessages': site_messages})
+
+def filter_messages(request):
+    print('Filtering messages')
+    print(request)
+    print(request.POST)
+    print(request.GET)
+    search_query = request.GET.get('search', 'nooooo')
+    
+    print(search_query)
+    if search_query:
+        sitemessages = Contact.objects.filter(name__icontains=search_query)
+    else:
+        sitemessages = Contact.objects.all()
+    return render(request, 'sitemessagespartial.html', {'sitemessages': sitemessages})
+
+
+def print_invoice(request):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; attachment; filename="invoice.pdf"'
+    response['Content-Transfer-Encoding'] = 'binary'
+
+    sitemessages = Contact.objects.all()
+    msgcounts = sitemessages.aggregate(msg_count=Count('id'))
+    html_string = render_to_string('sitemessagesRep.html', {'sitemessages':sitemessages, 'total': msgcounts})    
+    html = HTML(string=html_string)
+    result = html.write_pdf()
+
+    with tempfile.NamedTemporaryFile(delete=False) as f:
+        f.write(result)
+        f.flush()
+        response.write(open(f.name, 'rb').read())
+        f.close()
+        return response

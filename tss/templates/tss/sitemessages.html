@@ -1,0 +1,57 @@
+{% extends 'tss/base.html' %}
+
+{% load static %}
+
+{% block title %} Welcome To CartonAfzar {% endblock %}
+
+{% block content %}
+
+<div class="page-loader"></div>
+<header id="home" class="full-height bg-img" data-src="{% static 'images/bg/formsbackground2.jpg' %}">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1>مشاهده و مدیریت پیام های ارسالی به سایت کارتن افزار</h1>
+            <br>
+            <form>
+                {% csrf_token %}
+                <input name='search' id="searchInput" type="search" placeholder="جستجو ..." hx-get="/filter_messages"
+                    hx-trigger="input changed delay:500ms, search" hx-swap="outerHTML" hx-target="#msggrid">
+
+            </form>
+            <br>
+            <a class="btn btn-success" href="{% url 'tss:print_invoice' %}">Print Report</a>
+            <!-- Add this line -->
+            <br>
+            <br>
+            <div class="table-responsive" style="height: 520px; overflow-y: auto;" id="msggrid">
+                <table class="table table-striped" id="myTable">
+                    <thead>
+                        <tr style="background-color: turquoise; color: white;">
+                            <th class="text-center text-secondary">نام</th>
+                            <th class="text-center">پیام</th>
+                            <th class="text-center">ایمیل</th>
+                            <th class="text-center">تاریخ و زمان ارسال</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for message in sitemessages %}
+                        <tr>
+                            <td class="text-align-left">{{ message.name }}</td>
+                            <td>{{ message.message }}</td>
+                            <td>{{ message.email }}</td>
+                            <td class="text-success">{{ message.created_at }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+{% endblock %}

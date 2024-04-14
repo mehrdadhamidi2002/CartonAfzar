@@ -1,0 +1,22 @@
+<div class="table-responsive" style="height: 520px; overflow-y: auto;" id="msggrid">
+    <table class="table table-striped" id="myTable">
+        <thead>
+            <tr style="background-color: turquoise; color: white;">
+                <th class="text-center text-secondary">نام</th>
+                <th class="text-center">پیام</th>
+                <th class="text-center">ایمیل</th>
+                <th class="text-center">تاریخ و زمان ارسال</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in sitemessages %}
+            <tr>
+                <td class="text-align-left">{{ message.name }}</td>
+                <td>{{ message.message }}</td>
+                <td>{{ message.email }}</td>
+                <td class="text-success">{{ message.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

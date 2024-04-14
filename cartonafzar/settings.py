@@ -86,6 +86,21 @@ TEMPLATES = [
     },
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logfile.log'),
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'ERROR',
+    }
+}
 
 WSGI_APPLICATION = 'cartonafzar.wsgi.application'
 

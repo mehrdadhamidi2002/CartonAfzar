@@ -1,0 +1,104 @@
+{% load static %}
+
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proforma Invoice</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        @page {
+            size: "A4";
+            margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+            background: rgb(247, 245, 245);
+        }
+
+        @top-center {
+            content: "کارتن افزار"
+        }
+
+        @media print {
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+            }
+        }
+
+        /* Custom CSS for table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Additional CSS for table header */
+        th {
+            text-align: center;
+            background-color: rgb(176, 176, 179);
+            color: white;
+        }
+
+        /* Additional CSS for table columns */
+        td:nth-child(1) {
+            text-align: center;
+        }
+
+        td:nth-child(2),
+        td:nth-child(4) {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>کارتن افزار</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>اطلاعات فروشنده</h4>
+                <p>
+                    سامانه راهکار جامع<br>
+                    جنت آباد مرکزی<br>
+                    تهران<br>
+                    ایران
+                </p>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ردیف</th>
+                    <th scope="col">نام تماس گیرنده</th>
+                    <th scope="col">ایمیل</th>
+                    <th scope="col">متن پیام</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sitemessage in sitemessages %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{sitemessage.name}}</td>
+                    <td>{{sitemessage.email}}</td>
+                    <td>{{sitemessage.message}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>تعداد</td>
+                    <td>{{total.msg_count}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

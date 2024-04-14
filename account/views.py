@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
+
 def login_user(request):
     print(request.method)
     if request.method == 'POST':
@@ -14,7 +15,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request,("you were successfully logged in"))
+            messages.success(request,("شما با موفقیت وارد شدید."))
             return render(request,'tss/index.html',{'user':user})
         else:
             messages.success(request,("Password or Username is incorrect"))
@@ -24,8 +25,8 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    messages.success(request,("you were successfully logged out"))
-    return redirect('home')
+    messages.success(request,("شما با موفقیت خارج شدید"))
+    return redirect('tss:home')
 
 
 def signup(request):
@@ -35,15 +36,22 @@ def signup(request):
         form = UserCreationForm(request.POST)
         print(form)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.is_staff = False
+            user.is_superuser = False
+            user.save()
             print("User created successfully")
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request,("you have successfully created a new account"))
+            messages.success(request,("شما موفق به ساخت اکانت خود شدید."))
             return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'account/signup.html',{'form': form})
+
+
+
+
 
