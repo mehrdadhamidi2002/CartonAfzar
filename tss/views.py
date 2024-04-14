@@ -11,6 +11,8 @@ from .models import Contact
 from django.template.loader import render_to_string
 import tempfile
 from django.db.models import Count
+from xhtml2pdf import pisa
+from io import StringIO, BytesIO
 
 def home(request):
     if request.method == 'POST':
@@ -64,19 +66,34 @@ def filter_messages(request):
 
 
 def print_invoice(request):
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; attachment; filename="invoice.pdf"'
-    response['Content-Transfer-Encoding'] = 'binary'
-
+    template_path = 'tss/sitemessagesRep.html'
     sitemessages = Contact.objects.all()
     msgcounts = sitemessages.aggregate(msg_count=Count('id'))
-    html_string = render_to_string('sitemessagesRep.html', {'sitemessages':sitemessages, 'total': msgcounts})    
-    html = HTML(string=html_string)
-    result = html.write_pdf()
+    context = {'sitemessages': sitemessages, 'total': msgcounts}
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; attachment; filename="invoice'
+    template = get_template(template_path)
+    html = template.render(context)
+    pisa_status = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), dest=response)
 
-    with tempfile.NamedTemporaryFile(delete=False) as f:
-        f.write(result)
-        f.flush()
-        response.write(open(f.name, 'rb').read())
-        f.close()
-        return response
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+    # response = HttpResponse(content_type='application/pdf')
+    # response['Content-Disposition'] = 'inline; attachment; filename="invoice.pdf"'
+    # response['Content-Transfer-Encoding'] = 'binary'
+
+    # sitemessages = Contact.objects.all()
+    # msgcounts = sitemessages.aggregate(msg_count=Count('id'))
+    # html_string = render_to_string('sitemessagesRep.html', {'sitemessages':sitemessages, 'total': msgcounts})    
+    # html = HTML(string=html_string)
+    # result = html.write_pdf()
+
+    # with tempfile.NamedTemporaryFile(delete=False) as f:
+    #     f.write(result)
+    #     f.flush()
+    #     response.write(open(f.name, 'rb').read())
+    #     f.close()
+    #     return response
+    

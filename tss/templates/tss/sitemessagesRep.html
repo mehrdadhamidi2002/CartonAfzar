@@ -3,67 +3,35 @@
 <html lang="en" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Proforma Invoice</title>
     <style>
-        @page {
-            size: "A4";
-            margin: 2.5cm 1.5cm 3.5cm 1.5cm;
-            background: rgb(247, 245, 245);
+        @font-face {
+            font-family: MarkaziText, "MarkaziText Font";
+            src: url("{% static 'fonts/MarkaziText-Bold.ttf' %}");
         }
 
-        @top-center {
-            content: "کارتن افزار"
+        h1 {
+            font-family: MarkaziText, Arial, sans-serif;
         }
 
-        @media print {
-            @bottom-right {
-                content: "Page " counter(page) " of " counter(pages);
-            }
-        }
-
-        /* Custom CSS for table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        /* Additional CSS for table header */
-        th {
-            text-align: center;
-            background-color: rgb(176, 176, 179);
-            color: white;
-        }
-
-        /* Additional CSS for table columns */
-        td:nth-child(1) {
-            text-align: center;
-        }
-
-        td:nth-child(2),
-        td:nth-child(4) {
-            text-align: right;
+        body {
+            font-weight: 200;
+            font-size: 14px;
+            font-family: MarkaziText;
         }
     </style>
 </head>
 
+
 <body>
+    <pdf:language name="persian" />
     <div class="container">
         <h1>کارتن افزار</h1>
         <hr>
         <div class="row">
             <div class="col-md-8">
+                <p>عربی</p>
                 <h4>اطلاعات فروشنده</h4>
                 <p>
                     سامانه راهکار جامع<br>
