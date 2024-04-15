@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm  # Import your ContactForm
@@ -13,6 +15,9 @@ import tempfile
 from django.db.models import Count
 from xhtml2pdf import pisa
 from io import StringIO, BytesIO
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
 
 def home(request):
     if request.method == 'POST':
@@ -65,7 +70,16 @@ def filter_messages(request):
     return render(request, 'sitemessagespartial.html', {'sitemessages': sitemessages})
 
 
+def fetch_resources(uri, rel):
+    path = os.path.join(settings.STATIC_ROOT,
+                        uri.replace(settings.STATIC_URL, ""))
+    return path
+
+
 def print_invoice(request):
+
+    pdfmetrics.registerFont(TTFont('MarkaziText', 'C:\\Users\\mehrdad\\CartonAfzar\\tss\\static\\fonts\\MarkaziText-Bold.ttf'))
+
     template_path = 'tss/sitemessagesRep.html'
     sitemessages = Contact.objects.all()
     msgcounts = sitemessages.aggregate(msg_count=Count('id'))
@@ -74,7 +88,7 @@ def print_invoice(request):
     response['Content-Disposition'] = 'inline; attachment; filename="invoice'
     template = get_template(template_path)
     html = template.render(context)
-    pisa_status = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), dest=response)
+    pisa_status = pisa.CreatePDF(BytesIO(html.encode("UTF-8")), dest=response, link_callback=fetch_resources)
 
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')

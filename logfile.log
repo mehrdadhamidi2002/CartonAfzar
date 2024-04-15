@@ -1,0 +1,99 @@
+Internal Server Error: /print_invoice/
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\tss\views.py", line 91, in print_invoice
+    pisa_status = pisa.CreatePDF(BytesIO(html.encode("UTF-8")), dest=response, link_callback=fetch_resources)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\document.py", line 139, in pisaDocument
+    context = pisaStory(
+              ^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\document.py", line 75, in pisaStory
+    pisaParser(src, context, default_css, xhtml, encoding, xml_output)
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\parser.py", line 823, in pisaParser
+    context.parseCSS()
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\context.py", line 684, in parseCSS
+    self.css = self.cssParser.parse(self.cssText)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 561, in _parseStylesheet
+    src, atResults = self._parseAtKeyword(src)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 685, in _parseAtKeyword
+    src, result = self._parseAtFontFace(src)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 865, in _parseAtFontFace
+    src, properties = self._parseDeclarationGroup(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 1101, in _parseDeclarationGroup
+    src, single_property = self._parseDeclaration(src)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 1144, in _parseDeclaration
+    src, single_property = self._parseDeclarationProperty(src, property_name)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 1152, in _parseDeclarationProperty
+    src, expr = self._parseExpression(src)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 1178, in _parseExpression
+    src, term2 = self._parseExpressionTerm(src.lstrip())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 1221, in _parseExpressionTerm
+    raise self.ParseError(msg, src, ctxsrc)
+xhtml2pdf.w3c.cssParser.CSSParseError: Terminal function expression expected closing ')':: ('format(', "'truetype;\n\n        ")
+Error while parsing CSS file
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\context.py", line 513, in parseExternal
+    result = self.parse(cssFile.getData())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 542, in _parseStylesheet
+    src = self.re_comment.sub("", src)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+Error while parsing CSS file
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\context.py", line 513, in parseExternal
+    result = self.parse(cssFile.getData())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 542, in _parseStylesheet
+    src = self.re_comment.sub("", src)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+Error while parsing CSS file
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\context.py", line 513, in parseExternal
+    result = self.parse(cssFile.getData())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 542, in _parseStylesheet
+    src = self.re_comment.sub("", src)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+Error while parsing CSS file
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\context.py", line 513, in parseExternal
+    result = self.parse(cssFile.getData())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\xhtml2pdf\w3c\cssParser.py", line 542, in _parseStylesheet
+    src = self.re_comment.sub("", src)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
