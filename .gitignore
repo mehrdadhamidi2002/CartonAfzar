@@ -1,3 +1,5 @@
 /file
 /file.zip
 /env
+logfile.log
+db.sqlite3
