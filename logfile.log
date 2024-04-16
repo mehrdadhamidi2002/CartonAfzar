@@ -97,3 +97,63 @@ Traceback (most recent call last):
     src = self.re_comment.sub("", src)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: expected string or bytes-like object, got 'NoneType'
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\tss\views.py", line 28, in home
+    context = {'user': user}
+                       ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\tss\views.py", line 23, in home
+    context = {'user': user}
+                       ^^^^
+NameError: name 'user' is not defined
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\tss\views.py", line 23, in home
+    context = {'user': user}
+                       ^^^^
+NameError: name 'user' is not defined
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\.venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehrdad\CartonAfzar\tss\views.py", line 28, in home
+    context = {'user': user}
+                       ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value

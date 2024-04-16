@@ -17,6 +17,7 @@ def login_user(request):
             login(request, user)
             messages.success(request,("شما با موفقیت وارد شدید."))
             return render(request,'tss/index.html',{'user':user})
+            #return redirect('tss:home')
         else:
             messages.success(request,("Password or Username is incorrect"))
             return redirect('account:login_user')

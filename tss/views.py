@@ -27,9 +27,6 @@ def home(request):
     if request.method == 'GET':
         context = {'user': None}
 
-    
-    
-    print(request.method)
     return render(request, 'tss/index.html', context)
 
 def subscribe(request):

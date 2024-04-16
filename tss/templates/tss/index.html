@@ -44,13 +44,18 @@
                         <br>
                         {% if messages %}
                         {% for message in messages %}
-                        <div class="alert alert-warning alert-dismissible show" role="alert" id="myAlert">
+                        <div class="alert alert-warning alert-dismissible show" role="alert">
                             <strong>توجه! &nbsp&nbsp;</strong> {{ message }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         {% endfor %}
+                        <script>
+                            setTimeout(function () {
+                                document.getElementById('myloginAlert').style.display = 'none';
+                            }, 2000);
+                        </script>
                         {% endif %}
                         <br>
 
@@ -612,7 +617,7 @@
                         <div class="testimonial-item">
                             <div class="testimonial-title">
                                 <div class="testimonial-image img-thumbnail">
-                                    <img alt="" src="{% static 'images/testimonial/customers2.png' %}"
+                                    <img alt="customers" src="{% static 'images/testimonial/customers2.png' %}"
                                         class="img-responsive" title="Testimonial" />
                                 </div>
                                 <h4> مشتریان نمونه</h4>
