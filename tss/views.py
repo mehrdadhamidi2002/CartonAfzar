@@ -17,17 +17,11 @@ from xhtml2pdf import pisa
 from io import StringIO, BytesIO
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    if request.method == 'POST':
-        print(request.user)
-        user = request.user
-        context = {'user': user}
-    if request.method == 'GET':
-        context = {'user': None}
-
-    return render(request, 'tss/index.html', context)
+    return render(request, 'tss/index.html',[])
 
 def subscribe(request):
     #return HttpResponse('<div style="color:blue">Subscribed</div>')
@@ -45,6 +39,7 @@ def create_contact(request):
     #return render(request, 'contact_form.html', {'form': form})
     return HttpResponse('ok')
 
+@login_required
 def sitemessages_grid_view(request):
     print(request)
     print(request.POST)
@@ -52,6 +47,7 @@ def sitemessages_grid_view(request):
     site_messages = Contact.objects.all()
     return render(request, 'sitemessages.html', {'sitemessages': site_messages})
 
+@login_required
 def filter_messages(request):
     print('Filtering messages')
     print(request)
@@ -72,7 +68,7 @@ def fetch_resources(uri, rel):
                         uri.replace(settings.STATIC_URL, ""))
     return path
 
-
+@login_required
 def print_invoice(request):
 
     pdfmetrics.registerFont(TTFont('MarkaziText', 'C:\\Users\\mehrdad\\CartonAfzar\\tss\\static\\fonts\\MarkaziText-Bold.ttf'))

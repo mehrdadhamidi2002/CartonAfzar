@@ -7,11 +7,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords"
-    content="cartonafzar, کارتن افزار, نرم افزار کارتن سازی, tss, تی اس اس, samaneh rahkar jame, sitemessages, سامانه راهکار جامع, Corrugating board software">
+    content="cartonafzar, کارتن افزار, نرم افزار کارتن سازی, tss, تی اس اس, samaneh rahkar jame, sitemessages, سامانه راهکار جامع, ,پیام ها,Corrugating board software">
   <meta name="description" content="نرم افزار کارتن سازی کاتن افزار حرفه ای ترین نرم افزار کارتن و ورق">
   <meta name="author" content="Netcopy">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5JGK1V4F4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -66,6 +67,12 @@
   <!-- TITLE-->
   <title> {% block title %} {% endblock %} | کارتن افزار</title>
   <!-- TITLE-->
+
+  <script>
+    function closeHeader() {
+      document.getElementById('home').style.display = 'none';
+    }
+  </script>
 </head>
 
 
@@ -100,10 +107,15 @@
                 class="fa fa-instagram fa-1x "></i></a></li>
 
           {% if user.is_authenticated %}
-          <li><a class="nav-link active" href="{% url 'account:logout_user' %}">خروج</a></li>
+          <button type="button" class="btn btn-primary"
+            style="all: unset; margin-top: 23px; margin-right: 60px;color: white"> کاربر
+            <span class="badge text-bg-secondary" style="margin-top: auto; margin-right : 10px;"> {{user.username}}
+            </span>
+          </button>
+          <li><a class="btn btn-outline-light" href="{% url 'account:logout_user' %}">خروج</a></li>
           {% else %}
-          <li><a class="nav-link active" aria-current="page" href="{% url 'account:login_user' %}">ورود</a></li>
-          <li><a class="nav-link active " href="{% url 'account:signup' %}">ثبت نام</a></li>
+          <li><a class="btn btn-outline-success" aria-current="page" href="{% url 'account:login_user' %}">ورود</a></li>
+          <li><a class="btn btn-outline-primary" href="{% url 'account:signup' %}">ثبت نام</a></li>
           {% endif %}
 
           {% if user.is_superuser %}
@@ -114,6 +126,8 @@
       </div>
     </div>
   </nav>
+
+
   <div class=" page-loader">
   </div>
 
@@ -189,6 +203,7 @@
     <!-- // BEGIN // Fera.ai Footer Code - DO NOT MODIFY // -->
 
 
+    </script>
   </div>
 </body>
 

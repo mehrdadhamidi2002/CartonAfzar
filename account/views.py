@@ -16,13 +16,13 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request,("شما با موفقیت وارد شدید."))
-            return render(request,'tss/index.html',{'user':user})
-            #return redirect('tss:home')
+            #return render(request,'tss/index.html',{'user':user})
+            return redirect('tss:home')
         else:
             messages.success(request,("Password or Username is incorrect"))
             return redirect('account:login_user')
 
-    return render(request, 'account/login.html')
+    return render(request, 'registration/login.html')
 
 def logout_user(request):
     logout(request)
@@ -50,7 +50,7 @@ def signup(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'account/signup.html',{'form': form})
+    return render(request, 'registration/signup.html',{'form': form})
 
 
 

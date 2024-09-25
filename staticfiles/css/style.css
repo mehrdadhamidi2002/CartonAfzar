@@ -194,7 +194,7 @@ section {
 }
 
 
-/* 04. Navbar Styles */
+04. Navbar Styles 
 
 .navbar {
 	margin-bottom:0;
@@ -349,6 +349,8 @@ a.navbar-brand.sticky-logo, .header-sticky a.navbar-brand.primary-logo {
     height: 70px;
     line-height: 70px;
 }
+
+
 /* 05. Social Media Colors */
 /* social-pinterest */
 .navbar-default .navbar-social > li > a.social-pinterest:hover, .navbar-default .navbar-social > li > a.social-pinterest:focus, .navbar-default .navbar-social > li > a.social-pinterest:active,

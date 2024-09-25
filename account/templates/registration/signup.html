@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Welcome To CartonAfzar {% endblock %}
+{% block title %} SignUp {% endblock %}
 
 {% block content %}
 
@@ -16,7 +16,7 @@
                 <div class="header-content">
                     <div class="header-content-inner">
                         <div class="secton-title">
-                            <main class="py-8 px-10 ">
+                            <main class="py-8 px-10 " id="main">
 
                                 <body class="login-page">
                                     <main>
@@ -58,7 +58,7 @@
 
                                                 <button class="btn btn-primary btn-block" type="submit">ثبت
                                                     نام</button>
-
+                                                <!--
                                                 <div class="login-footer">
                                                     <h5>ثبت نام با شبکه های اجتماعی</h5>
                                                     <ul class="social-icons padding-none">
@@ -70,7 +70,10 @@
                                                                     class="fa fa-linkedin"></i></a></li>
                                                     </ul>
                                                 </div>
+                                                -->
                                             </form>
+                                            <button type=" button" class="btn btn-block bg-purple" aria-label="Close"
+                                                onclick="document.getElementById('main').style.display = 'none';  window.history.pushState({}, '', '/')">انصراف</button>
                                             <div class="login-links">
                                                 <a class="txt-brand login-links" href="{% url 'account:login_user' %}"">حساب کاربری دارید؟ وارد شوید</a>
                                             </div>

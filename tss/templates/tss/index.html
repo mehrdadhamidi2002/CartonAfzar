@@ -44,18 +44,14 @@
                         <br>
                         {% if messages %}
                         {% for message in messages %}
-                        <div class="alert alert-warning alert-dismissible show" role="alert">
+                        <div class="alert alert-warning alert-dismissible" role="alert" id="myAlert" hx-swap-oob="true"
+                            x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
                             <strong>توجه! &nbsp&nbsp;</strong> {{ message }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         {% endfor %}
-                        <script>
-                            setTimeout(function () {
-                                document.getElementById('myloginAlert').style.display = 'none';
-                            }, 2000);
-                        </script>
                         {% endif %}
                         <br>
 

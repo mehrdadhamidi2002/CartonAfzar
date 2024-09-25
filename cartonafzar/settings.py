@@ -49,9 +49,12 @@ INSTALLED_APPS = [
     'tss',
     'django_htmx',
     'easyaudit',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap5'
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 SITE_ID = 1
@@ -160,3 +163,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 DJANGO_EASY_AUDIT_REMOTE_ADDR_HEADER = 'HTTP_X_FORWARDED_FOR'
+
+LOGIN_REDIRECT_URL = '/account/login/'
+LOGOUT_REDIRECT_URL = '/account/login/'
